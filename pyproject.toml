@@ -26,6 +26,7 @@ pytest = "^8.3.3"
 taskiq-aio-pika = "^0.4.1"
 taskiq-redis = "^1.0.0"
 poetry-core = "^1.9.0"
+pendulum = "^3.0.0"
 
 
 [build-system]
