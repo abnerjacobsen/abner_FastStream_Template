@@ -67,6 +67,10 @@ class UserService:
             return user
         raise exception.user.NotFound
 
+    async def retrieve_all(self) -> list[models.User]:
+        users = await self.service.adapters.postgres.user.retrieve_many()
+        return users
+
     async def refresh_oauth2(self, refresh_token: str) -> models.UserAuth:
         user = await self.retrieve_by_token(refresh_token)
         return await self.oauth2(user)
